@@ -1,6 +1,18 @@
-
 //start button
 const startBtn = document.querySelector(".start-btn")
+function startGame() {
+
+}
+
+function setNext() {
+
+}
+
+function pickAnswer() {
+
+}
+
+
 
 //answer options
 const opt1 = document.querySelector(".option1")
