@@ -8,25 +8,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main-page">
-      <h1>Music Trivia</h1>
-
-      <!--start game button-->
-
-      <button class="start-btn">Start Game</button>
-    </div>
-    <div class="question1" id="questioncontainer">
-
-      <h2>Question 1</h2>
-      <p>What major key doesn't have sharps or flats?</p>
-      <div class="answers">
-        <button class="option1"></button>
-        <button class="option2"></button>
-        <button class="option3"></button>
-        <button class="option4"></button>
+    <div class="container">
+      <div id="questioncontainer" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
       </div>
     </div>
-  
-    <script src="script.js"></script>
+
+    <script defer src="script.js"></script>
   </body>
 </html>

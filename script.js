@@ -1,4 +1,7 @@
 
+//start button
+const startBtn = document.querySelector(".start-btn")
+
 //answer options
 const opt1 = document.querySelector(".option1")
 const opt2 = document.querySelector(".option2")
@@ -7,8 +10,6 @@ const opt4 = document.querySelector(".option4")
 const qstCon = document.querySelector("#questioncontainer")
 
 
-//start button
-const startBtn = document.querySelector(".start-btn")
 
 console.log(opt1)
 
