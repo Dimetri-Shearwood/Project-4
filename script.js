@@ -1,80 +1,178 @@
 //start button
 const startBtn = document.querySelector(".start-btn")
-const nextBtn = document.querySelector(".next-btn")
-const qstCon = document.querySelector("#questioncontainer")
-let shuffleQuestion
-let currentQuestion
-const questionElement = document.querySelector("#question")
-const answerButtonElement = document.querySelector("#answer-button")
-
 
 startBtn.addEventListener("click", startGame)
+
+//answer options
+const opt1 = document.querySelector(".option1")
+const opt2 = document.querySelector(".option2")
+const opt3 = document.querySelector(".option3")
+const opt4 = document.querySelector(".option4")
+const qstCon = document.querySelector("#questioncontainer")
+
+
+console.log(opt1)
+
+//Event Listener for Buttons
+opt1.addEventListener("click", getAnswer)
+opt2.addEventListener("click", getAnswer)
+opt3.addEventListener("click", getAnswer)
+opt4.addEventListener("click", getAnswer)
+// startBtn.addEventListener("click", (e))
 
 function startGame() {
     console.log("Starting Now")
     startBtn.classList.add('hide')
-    shuffleQuestion = questions.sort(() => Math.random() - .5)
-    currentQuestion = 0
     qstCon.classList.remove('hide')
-    nextQuestion()
 }
 
-function nextQuestion() {
-    resetState()
-    showQuestion(shuffleQuestion[currentQuestion])
+let score = 0
+let questionNum = 0
 
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer=> {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', pickAnswer)
-        answerButtonElement.appendChild(button)
-    })
-}
-
-function resetState() {
-    nextBtn.classList.add('hide')
-    while (answerButtonElement){
-        answerButtonElement.removeChild
-        (answerButtonElement.firstChild)
-}}
-
-function pickAnswer(e) {
-    const selectedBtn = e.target
-    const correct = selectedBtn.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
+function populate(){
+    
+    if(questionNum > allQuestions.length - 1){
+        return alert("You scored a " + score)
     }
+let questionHeader = qstCon.querySelector("h2")
+let questionTitle = qstCon.querySelector("p")
+let allBtn = qstCon.querySelectorAll("button")
+questionHeader.textContent = "Question " + parseInt(questionNum + 1)
+questionTitle.textContent = allQuestions[questionNum].question
+let correct = allQuestions[questionNum].correctAnswer
+for (let i = 0; i < allBtn.length; i++){
+    if (i === correct){
+        allBtn[i].value = "True"
+    }
+    else {
+        allBtn[i].value = "False"
+    }
+    allBtn[i].innerText = allQuestions[questionNum].answer[i]
+}
+
 }
 
 
+function getAnswer(e) {
+    console.log(e.target.value)
+    if(e.target.value === "True" ){
+        score +=10
+        console.log("Correct")
+        console.log(score)
 
-const questions = [
-    {
-        question: "What major key doesn't have sharps or flats?",
-        answers: [
-            {text:"C", correct: true },
-            {text:"A", correct: false },
-            {text:"M", correct: false },
-            {text:"G", correct: false },
-
-        ]
+        
+    } 
+    else {
+        console.log("Incorrect")
     }
+
+    questionNum++
+    populate()
+}
+
+const allQuestions = [
+{
+    question: "What major key doesn't have sharps or flats?",
+    answer: [
+        "C",
+        "A",
+        "G",
+        "M"
+    ],
+    correctAnswer: 0,
+},
+{
+    question: "How many keys does a full grand piano have?",
+    answer: [
+         "82",
+         "78",
+         "88",
+         "104"
+    ],
+    correctAnswer: 2,
+    
+    
+},
+{
+    question: "Which is a member of the brass family?",
+    answer: [
+         "Guitar",
+         "Flute",
+         "Watermelon",
+         "Trumpet"
+    ],
+    correctAnswer: 3
+},
+{
+    question: "I am an instrument. I am usually seen with 6 strings. Who am I?",
+    answer: [
+         "Cello",
+         "Harmonica",
+         "Trombone",
+         "Guitar"
+    ],
+    correctAnswer: 3
+},
+{
+    question: "What type of chord do the notes CEG make up?",
+    answer: [
+         "Major",
+         "Minor",
+         "Diminished",
+         "Augmented"
+    ],
+    correctAnswer: 0
+},
+{
+    question: "What is the notation for musicians called?",
+    answer: [
+         "Notty Notation",
+         "Word  Notation",
+         "Staff Notation",
+         "Grescham Notation"
+    ],
+    correctAnswer: 2
+},
+{
+    question: "What does legato mean?",
+    answer: [
+         "Swiftly and well connected",
+         "Smooth and well connected",
+         "Aggressive and Jagged",
+         "Soft and Jagged"
+    ],
+    correctAnswer: 1 
+},
+{
+    question: "How many notes are there in an octave?",
+    answer: [
+         "7",
+         "13",
+         "8",
+         "12"
+    ],
+    correctAnswer: 1
+},
+{
+    question: "What is the word describing speed in music?",
+    answer: [
+         "Adante",
+         "Mojuine",
+         "Tempo",
+         "Pronjunto"
+    ],
+    correctAnswer: 2
+},
+{
+    question: "What is the interval between C and G?",
+    answer: [
+         "Perfect 3rd",
+         "Perfect 4th",
+         "Perfect 5th",
+         "Perfect 6th"
+    ],
+    correctAnswer: 2
+}
+
 ]
+populate()
