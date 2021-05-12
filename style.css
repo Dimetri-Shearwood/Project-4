@@ -4,7 +4,7 @@ body {
     background-image: url(https://images.unsplash.com/photo-1488376739361-ed24c9beb6d0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1055&q=80);
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
     
@@ -45,4 +45,14 @@ p {
     font-size: 30px;
     background-color: white;
     text-align: center;
+}
+
+.start-btn {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.hide {
+    display: none;
 }

@@ -1,3 +1,7 @@
+//start button
+const startBtn = document.querySelector(".start-btn")
+
+startBtn.addEventListener("click", startGame)
 
 //answer options
 const opt1 = document.querySelector(".option1")
@@ -6,9 +10,6 @@ const opt3 = document.querySelector(".option3")
 const opt4 = document.querySelector(".option4")
 const qstCon = document.querySelector("#questioncontainer")
 
-
-//start button
-const startBtn = document.querySelector(".start-btn")
 
 console.log(opt1)
 
@@ -19,6 +20,11 @@ opt3.addEventListener("click", getAnswer)
 opt4.addEventListener("click", getAnswer)
 // startBtn.addEventListener("click", (e))
 
+function startGame() {
+    console.log("Starting Now")
+    startBtn.classList.add('hide')
+    qstCon.classList.remove('hide')
+}
 
 let score = 0
 let questionNum = 0
