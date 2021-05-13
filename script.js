@@ -3,12 +3,14 @@ const startBtn = document.querySelector(".start-btn")
 
 startBtn.addEventListener("click", startGame)
 
+
 //answer options
 const opt1 = document.querySelector(".option1")
 const opt2 = document.querySelector(".option2")
 const opt3 = document.querySelector(".option3")
 const opt4 = document.querySelector(".option4")
 const qstCon = document.querySelector("#questioncontainer")
+const playAnotherRnd = document.querySelector(".play-again")
 
 
 console.log(opt1)
@@ -32,8 +34,24 @@ let questionNum = 0
 function populate(){
     
     if(questionNum > allQuestions.length - 1){
-        return alert("You scored a " + score)
+        if(questionNum <= 30){
+        return alert("You scored a " + score + ". You should really brush up on your music knowledge")
+        } else if (questionNum <= 60) {
+        return alert( "You scored a " + score + ". Better luck next time. ")
+        } else if(questionNum <= 90)
+        return alert("Impressive, you scored a " + score)
+        else (questionNum < 100)
+        return alert("You got a perfect score " + score)
+
+
     }
+
+
+function playAgain(){
+    console.log("Lets do it!")
+    playAnotherRnd.classList.add('hide')
+    
+}
 let questionHeader = qstCon.querySelector("h2")
 let questionTitle = qstCon.querySelector("p")
 let allBtn = qstCon.querySelectorAll("button")
