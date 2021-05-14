@@ -24,10 +24,10 @@ h2 {
     display: flex;
     justify-content: center;
     height: 30px;
-    width: 100%
+    width: 100%;
     padding: 0px 2px 0px 2px;
     /* justify-content: space-between; */
-    margin: 100px 150px 0px 150px
+    margin: 100px 10px 0px 10px
     
 }
 
@@ -48,6 +48,12 @@ p {
 }
 
 .start-btn {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.play-again-btn {
     font-size: 3rem;
     font-weight: bold;
     padding: 10px 20px;
