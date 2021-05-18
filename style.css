@@ -1,15 +1,14 @@
 body {
     display: flex;
     justify-content: center;
-    background-image: url(https://images.unsplash.com/photo-1488376739361-ed24c9beb6d0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1055&q=80);
+    background-image: url(https://thumbs.dreamstime.com/z/vintage-music-notes-background-simple-60252699.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
-    
-
 }
+
 h2 {
     display: flex;
     justify-content: center;
@@ -17,7 +16,18 @@ h2 {
     color: #FFFFFF;
     padding: 10px;
     border-radius: 10px;
-    margin:10px
+    margin:10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: purple;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    margin:10px;
+    font-size: 80px;
 }
 
 .answers {
@@ -39,6 +49,7 @@ img {
     background-repeat: no-repeat;
 
 }
+
 p {
     display: flex;
     justify-content: center;
@@ -48,15 +59,26 @@ p {
 }
 
 .start-btn {
+    display: flex;
+    justify-content: center;
     font-size: 3rem;
     font-weight: bold;
     padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: .3em;
+    cursor: pointer;
 }
 
 .play-again-btn {
+    display: flex;
+    justify-content: center;
     font-size: 3rem;
     font-weight: bold;
     padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: .3em;
+    cursor: pointer;
+    
 }
 
 .hide {
