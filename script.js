@@ -13,7 +13,7 @@ const opt3 = document.querySelector(".option3");
 const opt4 = document.querySelector(".option4");
 const qstCon = document.querySelector("#questioncontainer");
 
-//Event Listener for Buttons
+//event listeners for answer buttons
 opt1.addEventListener("click", getAnswer);
 opt2.addEventListener("click", getAnswer);
 opt3.addEventListener("click", getAnswer);
@@ -32,7 +32,6 @@ function startGame() {
 function playAgain() {
   console.log("Lets do it!");
   qstCon.classList.add("hide");
-  // resetBtn.classList.remove('hide')
   score = 0;
   questionNum = 0;
   populate();
